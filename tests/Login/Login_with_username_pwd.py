@@ -32,11 +32,9 @@ class LoginTest1(unittest.TestCase):
         Password : True
         Expected : Login successfully
         """
-        self.driver.press_keycode(3)
-
         self.loginobj.click_logo_okxe()
 
-        time.sleep(300)
+        time.sleep(3)
     #     # try :
     #     #     self.loginobj.click_button_next_banner()
     #     #     self.loginobj.click_button_next_banner()
