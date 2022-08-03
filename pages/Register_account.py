@@ -1,14 +1,17 @@
+from appium.webdriver.common.mobileby import MobileBy
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from locators.loginLocator import *
-
-
+from appium import webdriver
+import time
 class RegisterAccount:
     def __init__(self, driver):
         self.driver = driver
 
     def click_register_button(self):
         print("Click register button")
-        click_rg_bt = self.driver.find_element_by_xpath(get_button_register_xpath())
-        click_rg_bt.click()
+        click_button_next_banner = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID,get_button_next_banner_id())))
+        click_button_next_banner.click()
 
     def click_username_register(self):
         print("Click username register")

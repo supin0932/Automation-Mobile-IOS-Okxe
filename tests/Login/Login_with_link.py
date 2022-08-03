@@ -87,6 +87,7 @@ class LoginTest2(unittest.TestCase):
         #     pass
         self.loginobj.click_button_login()
         self.loginobj1.click_icon_facebook()
+        self.loginobj1.click_button_continue()
         self.loginfbobj.enter_user_pwd_facebook(username="m.nhutle@okxe.vn", pwd="@Aa246357")
         self.loginobj.click_logo_account()
         text = self.loginobj.get_text_username_account()

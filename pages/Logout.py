@@ -15,16 +15,16 @@ class LogoutPage:
 
     def click_icon_setting(self):
         print("Click icon setting")
-        click_icon_setting = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ID, "com.okxe.app:id/iv_profile")))
+        click_icon_setting = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, get_icon_setting_id())))
         click_icon_setting.click()
 
     def click_button_logout(self):
         print("Click button logout")
-        click_button_logout = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ID, get_button_logout_id())))
+        click_button_logout = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, get_button_logout_id())))
         click_button_logout.click()
 
     def click_button_confirm_logout(self):
         print("Click button confirm logout")
-        click_button_confirm_logout = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ID, get_button_confirm_logout_id())))
+        click_button_confirm_logout = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, get_button_confirm_logout_id())))
         click_button_confirm_logout.click()
 

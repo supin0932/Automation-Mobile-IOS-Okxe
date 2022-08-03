@@ -16,7 +16,7 @@ class LoginPage2:
 
     def click_icon_facebook(self):
         print('Click icon facebook')
-        click_iconfacebook = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ID,get_icon_login_facebook_id())))
+        click_iconfacebook = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID,get_icon_login_facebook_id())))
         click_iconfacebook.click()
 
     def click_icon_gmail(self):
@@ -149,3 +149,8 @@ class LoginPage2:
         print("Click icon home")
         CLICK = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, "Trang chủ")))
         CLICK.click()
+
+    def click_button_continue(self):
+        print('Click continue')
+        click_iconfacebook = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID,"Continue")))
+        click_iconfacebook.click()

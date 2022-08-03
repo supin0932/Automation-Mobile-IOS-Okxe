@@ -1,8 +1,8 @@
 def get_button_next_banner_id():
-    return "com.okxe.app:id/btn_next"
+    return "onboard_screen_next_step_button"
 
 def get_button_complete_id():
-    return "com.okxe.app:id/btn_complete"
+    return "onboard_screen_finish_button"
 
 def get_button_accept_locate_id():
     return "com.okxe.app: id / tv_accept"
@@ -10,32 +10,32 @@ def get_button_accept_locate_id():
 def get_button_unaccept_locate_id():
     return "com.okxe.app:id/tv_decline"
 
-def get_button_input_usr_id():
-    return "com.okxe.app:id/edt_input_id"
+def get_input_usr_id():
+    return "oka_signin_screen_username_textfield_view"
 
-def get_button_input_pwd_id():
-    return "com.okxe.app:id/edt_input_password"
+def get_input_pwd_id():
+    return "oka_signin_screen_password_textfield_view"
 
 def get_button_enter_login_id():
-    return "com.okxe.app:id/btn_login"
+    return "oka_signin_screen_signin_button"
 
 def get_button_login_id():
-    return "com.okxe.app:id/tv_login"
+    return "okxe_home_login_btn"
 
 def get_logo_account_id():
-    return  "com.okxe.app:id/navigation_view_more"
+    return  "Tài khoản"
 
 def get_text_username_account_id():
-    return "com.okxe.app:id/txt_user_name"
+    return "okxe_setting_account_name_label"
 
 def get_text_warning_id():
-    return "com.okxe.app:id/tv_validate_warning"
+    return "okxe_base_error_label"
 
 def get_logo_okexe_id():
-    return "OKXE Dev"
+    return "OKXE Stage"
 
 def get_icon_login_facebook_id():
-    return "com.okxe.app:id/bt_login_facebook"
+    return "oka_signin_screen_facebook_button"
 
 def get_usr_facebook_id():
     return "m_login_email"
@@ -51,3 +51,6 @@ def get_icon_gmail_id():
 
 def get_logo_facebook_id():
     return "Facebook"
+
+def get_avatar_id():
+    return "tester1"

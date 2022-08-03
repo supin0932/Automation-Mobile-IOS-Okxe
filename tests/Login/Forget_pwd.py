@@ -7,6 +7,8 @@ from pages.Login_with_link import *
 from pages.Logout import LogoutPage
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from pages.Forget_id_and_pwd import *
+from appium.webdriver.common.touch_action import TouchAction
 
 @pytest.mark.usefixmarkmarktures("driver_Testusefixmarkmarkclass")
 class LoginTest2(unittest.TestCase):
@@ -22,55 +24,40 @@ class LoginTest2(unittest.TestCase):
         self.loginobj = LoginPage1(self.driver)
         self.loginobj1 = LoginPage2(self.driver)
         self.logoutobj = LogoutPage(self.driver)
+        self.registerobj = ForgetPassword(self.driver)
 
     def tearDown(self):
-        self.driver.quit()
+        self.driver.terminate_app('vn.okxe.adhoc')
 
     def test_forget_pwd(self):
-
-        self.driver.press_keycode(3)
+        action = TouchAction(self.driver)
+        self.driver.terminate_app('vn.okxe.adhoc')
         self.loginobj.click_logo_okxe()
-        CLICK = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ID, 'com.okxe.app:id/tv_forgot_id_password')))
-        CLICK.click()
-        CLICK = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ID, 'com.okxe.app:id/edt_phone_number')))
-        CLICK.send_keys("enter numberphone")
-        CLICK = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ID, 'com.okxe.app:id/btn_continue')))
-        CLICK.click()
-        CLICK = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[1]')))
-        CLICK.send_keys("")
-        CLICK = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[2]')))
-        CLICK.send_keys("")
-        CLICK = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[3]')))
-        CLICK.send_keys("")
-        CLICK = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[4]')))
-        CLICK.send_keys("")
-        CLICK = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[5]')))
-        CLICK.send_keys("")
-        CLICK = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[6]')))
-        CLICK.send_keys("")
-        CLICK = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, 'Mật khẩu')))
-        CLICK.click()
-        CLICK = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ID, 'com.okxe.app:id/edt_input_password')))
-        CLICK.send_keys("")
-        CLICK = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ID, 'com.okxe.app:id/edt_input_confirm_password')))
-        CLICK.send_keys("")
-        CLICK = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ID, 'com.okxe.app:id/btn_confirm')))
-        CLICK.click()
-        CLICK = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ID, 'com.okxe.app:id/btn_confirm_single_mode')))
-        CLICK.click()
+        self.loginobj.click_button_login()
+        self.registerobj.click_button_forget_pwd()
+        self.registerobj.enter_numberphone(numberphone= "0932949905")
+        action.tap(x=186, y=152).perform()
+        self.registerobj.click_button_continue()
+        self.registerobj.click_button_autofill_otp()
+        self.registerobj.click_tab_username()
+        text = self.registerobj.get_username()
+        self.registerobj.click_tab_pwd()
+        self.registerobj.enter_pwd(pwd= "")
+        self.registerobj.enter_pwd_confirm(pwdcf= "")
+        self.registerobj.click_button_update_pwd()
+        self.registerobj.click_button_comback_login()
+        self.loginobj.enter_usr(usr= text)
+        self.loginobj.enter_pwd(pwd= "")
         self.loginobj.click_logo_account()
-        self.loginobj.enter_button_usr(usr="0932241574")
-        self.loginobj.enter_button_pwd(pwd="@Aa246357")
-        self.loginobj.click_button_enter_login()
-        self.loginobj.click_logo_account()
-        text = self.loginobj.get_text_username_account()
+        text1 = self.loginobj.get_text_username_account()
         self.logoutobj.click_icon_setting()
         self.logoutobj.click_button_logout()
         self.logoutobj.click_button_confirm_logout()
-        CLICK = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, "Trang chủ")))
-        CLICK.click()
-        self.driver.press_keycode(3)
-        if text == "nhut le":
+        time.sleep(3)
+        if text1 == text:
             assert True
         else:
             assert False
+
+if __name__ == "__main__":
+    unittest.main()
