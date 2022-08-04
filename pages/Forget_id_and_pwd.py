@@ -20,17 +20,17 @@ class ForgetPassword:
 
     def enter_otp(self, n1, n2, n3, n4, n5, n6):
         print("Enter opt")
-        enter_n1 = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((MobileBy.XPATH, get_nu1_otp_xpath())))
+        enter_n1 = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, get_nu1_otp_xpath())))
         enter_n1.send_keys(n1)
-        enter_n2 = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((MobileBy.XPATH, get_nu2_otp_xpath())))
+        enter_n2 = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, get_nu2_otp_xpath())))
         enter_n2.send_keys(n2)
-        enter_n3 = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((MobileBy.XPATH, get_nu3_otp_xpath())))
+        enter_n3 = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, get_nu3_otp_xpath())))
         enter_n3.send_keys(n3)
-        enter_n4 = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((MobileBy.XPATH, get_nu4_otp_xpath())))
+        enter_n4 = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, get_nu4_otp_xpath())))
         enter_n4.send_keys(n4)
-        enter_n5 = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((MobileBy.XPATH, get_nu5_otp_xpath())))
+        enter_n5 = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, get_nu5_otp_xpath())))
         enter_n5.send_keys(n5)
-        enter_n6 = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((MobileBy.XPATH, get_nu6_otp_xpath())))
+        enter_n6 = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, get_nu6_otp_xpath())))
         enter_n6.send_keys(n6)
 
     def click_button_continue(self):
@@ -47,7 +47,7 @@ class ForgetPassword:
 
     def get_username(self):
         print("Get username")
-        get_usr = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ID, get_usrname_in_tab_id()))).text
+        get_usr = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.XPATH, "//XCUIElementTypeTextField[@name='rounded_text_field']"))).text
         return get_usr
 
     def click_tab_pwd(self):
@@ -67,7 +67,7 @@ class ForgetPassword:
 
     def click_button_comback_login(self):
         print("Click button comback login")
-        click_bt_cb_lg = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ID, get_button_comback_login_accessid())))
+        click_bt_cb_lg = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.XPATH, "//XCUIElementTypeButton[@name='Về trang đăng nhập']")))
         click_bt_cb_lg.click()
 
     def click_button_update_pwd(self):

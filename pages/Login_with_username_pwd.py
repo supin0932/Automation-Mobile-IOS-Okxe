@@ -30,14 +30,15 @@ class LoginPage1:
 
     def click_button_usr(self):
         print('Click username')
-        enter_button_usr = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID,get_input_usr_id())))
-        enter_button_usr.click()
+        click_usr = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID,get_input_usr_id())))
+        click_usr.click()
 
     def enter_usr(self, usr):
         print('Enter username')
-        enter_button_usr = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID,get_input_usr_id())))
-        enter_button_usr.clear()
-        enter_button_usr.send_keys(usr)
+        enter_usr = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID,get_input_usr_id())))
+        time.sleep(2)
+        enter_usr.clear()
+        enter_usr.send_keys(usr)
 
     def click_button_pwd(self):
         print('Click password')
@@ -86,3 +87,8 @@ class LoginPage1:
         print('Click avatar')
         click_avatar = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, get_avatar_id())))
         click_avatar.click()
+
+    def get_textwarning_numberphone(self):
+        print('Get text numberphone warning')
+        get_text = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, get_text_warning_numberphone_accessid()))).text
+        return get_text

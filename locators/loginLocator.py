@@ -32,7 +32,7 @@ def get_text_warning_id():
     return "okxe_base_error_label"
 
 def get_logo_okexe_id():
-    return "OKXE Stage"
+    return "OKXE"
 
 def get_icon_login_facebook_id():
     return "oka_signin_screen_facebook_button"
@@ -54,3 +54,6 @@ def get_logo_facebook_id():
 
 def get_avatar_id():
     return "tester1"
+
+def get_text_warning_numberphone_accessid():
+    return "oka_checkphone_screen_input_phone_error_label"

@@ -10,23 +10,23 @@ def get_button_continue_accessid():
 def get_button_autofill_otp_acessid():
     return "suggestion"
 
-def get_nu1_otp_xpath():
-    return "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[1]"
+def get_nu1_otp_accessid():
+    return "oka_otp_input_view_separate_0"
 
-def get_nu2_otp_xpath():
-    return "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[2]"
+def get_nu2_otp_accessid():
+    return "oka_otp_input_view_separate_1"
 
-def get_nu3_otp_xpath():
-    return "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[3]"
+def get_nu3_otp_accessid():
+    return "oka_otp_input_view_separate_2"
 
-def get_nu4_otp_xpath():
-    return "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[4]"
+def get_nu4_otp_accessid():
+    return "oka_otp_input_view_separate_3"
 
-def get_nu5_otp_xpath():
-    return "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[5]"
+def get_nu5_otp_accessid():
+    return "oka_otp_input_view_separate_4"
 
-def get_nu6_otp_xpath():
-    return "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.EditText[6]"
+def get_nu6_otp_accessid():
+    return "oka_otp_input_view_separate_5"
 
 def get_tab_usrname_accessid():
     return "oka_forgetting_screen_username_tab_button"
