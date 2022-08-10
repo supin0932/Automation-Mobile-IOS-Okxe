@@ -30,18 +30,38 @@ class LoginTest2(unittest.TestCase):
         self.loginfbobj = LoginFacebook(self.driver)
         self.logoutfbobj = LogoutFacebook(self.driver)
         self.logingmobj = LoginGmail(self.driver)
-        self.logingmobj = LogoutGmail(self.driver)
+        self.logoutgmobj = LogoutGmail(self.driver)
 
     def tearDown(self):
-        self.driver.quit()
+        self.driver.terminate_app('com.okxe')
 
     def test_login_with_fb_with_account_logined(self):
         """
         Account facebook : True
         Expected : Login successfully
         """
+
+
         self.loginfbobj.login_account_fb(username="m.nhutle@okxe.vn", pwd="@Aa246357")
         self.loginobj.click_logo_okxe()
+        # try:
+        #     time.sleep(1)
+        #     self.driver.find_element(MobileBy.ACCESSIBILITY_ID, "Don’t Allow").click()
+        #     time.sleep(1)
+        #     try:
+        #         self.driver.find_element(MobileBy.ACCESSIBILITY_ID, "Don’t Allow").click()
+        #         time.sleep(1)
+        #
+        #         try:
+        #             self.driver.find_element(MobileBy.ACCESSIBILITY_ID, "Ask App Not to Track").click()
+        #             time.sleep(1)
+        #
+        #         except:
+        #             pass
+        #     except:
+        #         pass
+        # except:
+        #     pass
         # try:
         #     self.loginobj.click_button_next_banner()
         #     self.loginobj.click_button_next_banner()
@@ -54,13 +74,14 @@ class LoginTest2(unittest.TestCase):
         #     pass
         self.loginobj.click_button_login()
         self.loginobj1.click_icon_facebook()
-        time.sleep(10)
+        # time.sleep(10)
         self.loginobj.click_logo_account()
         text = self.loginobj.get_text_username_account()
         self.logoutobj.click_icon_setting()
         self.logoutobj.click_button_logout()
         self.logoutobj.click_button_confirm_logout()
         self.loginobj1.click_icon_home()
+        self.driver.terminate_app('com.okxe')
         self.logoutfbobj.logout_facebook()
         if text == "Lê Nhựt":
             assert True
@@ -87,7 +108,8 @@ class LoginTest2(unittest.TestCase):
         #     pass
         self.loginobj.click_button_login()
         self.loginobj1.click_icon_facebook()
-        self.loginobj1.click_button_continue()
+        # self.loginobj1.click_button_continue()
+        # time.sleep(2)
         self.loginfbobj.enter_user_pwd_facebook(username="m.nhutle@okxe.vn", pwd="@Aa246357")
         self.loginobj.click_logo_account()
         text = self.loginobj.get_text_username_account()
@@ -95,6 +117,7 @@ class LoginTest2(unittest.TestCase):
         self.logoutobj.click_button_logout()
         self.logoutobj.click_button_confirm_logout()
         self.loginobj1.click_icon_home()
+        self.driver.terminate_app('com.okxe')
         self.logoutfbobj.logout_facebook()
         if text == "Lê Nhựt":
             assert True
@@ -119,6 +142,7 @@ class LoginTest2(unittest.TestCase):
         #     pass
         self.loginobj.click_button_login()
         self.loginobj1.click_icon_gmail()
+        time.sleep(5)
         self.logingmobj.enter_user_pwd_gmail(username="lenhut20121995@gmail.com", pwd="11762115")
         self.loginobj.click_logo_account()
         text = self.loginobj.get_text_username_account()
@@ -126,6 +150,7 @@ class LoginTest2(unittest.TestCase):
         self.logoutobj.click_button_logout()
         self.logoutobj.click_button_confirm_logout()
         self.loginobj1.click_icon_home()
+        self.driver.terminate_app('com.okxe')
         self.logoutgmobj.logout_gmail()
         if text == "nhựt lê":
             assert True
@@ -152,12 +177,14 @@ class LoginTest2(unittest.TestCase):
         self.loginobj.click_button_login()
         self.loginobj1.click_icon_gmail()
         self.logingmobj.click_select_account_gmail()
+        time.sleep(5)
         self.loginobj.click_logo_account()
         text = self.loginobj.get_text_username_account()
         self.logoutobj.click_icon_setting()
         self.logoutobj.click_button_logout()
         self.logoutobj.click_button_confirm_logout()
         self.loginobj1.click_icon_home()
+        self.driver.terminate_app('com.okxe')
         self.logoutgmobj.logout_gmail()
         if text == "nhựt lê":
             assert True

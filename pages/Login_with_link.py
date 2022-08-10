@@ -18,11 +18,36 @@ class LoginPage2:
         print('Click icon facebook')
         click_iconfacebook = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID,get_icon_login_facebook_id())))
         click_iconfacebook.click()
+        try:
+            click_iconfacebook = WebDriverWait(self.driver, 5).until(
+                EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, "Continue")))
+            click_iconfacebook.click()
+            try:
+                click_iconfacebook = WebDriverWait(self.driver, 5).until(
+                    EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, "Tiếp tục")))
+                click_iconfacebook.click()
+            except:
+                pass
+        except:
+            pass
+
 
     def click_icon_gmail(self):
         print('Click icon gmail')
-        click_icongmail = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ID, get_icon_gmail_id())))
+        click_icongmail = WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, get_icon_gmail_id())))
         click_icongmail.click()
+        try:
+            click_iconfacebook = WebDriverWait(self.driver, 5).until(
+                EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, "Continue")))
+            click_iconfacebook.click()
+            try:
+                click_iconfacebook = WebDriverWait(self.driver, 5).until(
+                    EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, "Tiếp tục")))
+                click_iconfacebook.click()
+            except:
+                pass
+        except:
+            pass
 
 
     def click_username_facebook(self):

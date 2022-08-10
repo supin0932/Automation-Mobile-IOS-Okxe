@@ -47,7 +47,7 @@ def get_button_login_fb_id():
     return "login_password_step_element"
 
 def get_icon_gmail_id():
-    return "com.okxe.app:id/bt_login_google"
+    return "oka_signin_screen_google_button"
 
 def get_logo_facebook_id():
     return "Facebook"

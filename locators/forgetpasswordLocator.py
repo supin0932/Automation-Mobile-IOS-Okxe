@@ -1,5 +1,5 @@
 def get_button_forget_pwd_accessid():
-    return "oka_signin_screen_forget_id_pass_button"
+    return "Quên ID/Mật khẩu?"
 
 def get_enter_numberphone_acessid():
     return "oka_check_phone_screen_phone_number_textfield"
@@ -8,7 +8,7 @@ def get_button_continue_accessid():
     return "oka_checkphone_screen_continue_button"
 
 def get_button_autofill_otp_acessid():
-    return "suggestion"
+    return "gợi ý"
 
 def get_nu1_otp_accessid():
     return "oka_otp_input_view_separate_0"
@@ -48,3 +48,21 @@ def get_button_update_pwd_accessid():
 
 def get_button_comback_login_accessid():
     return "oka_username_view_return_login_screen"
+
+def get_nb1_otp_accessid():
+    return "oka_otp_input_view_separate_0"
+
+def get_nb2_otp_accessid():
+    return "oka_otp_input_view_separate_1"
+
+def get_nb3_otp_accessid():
+    return "oka_otp_input_view_separate_2"
+
+def get_nb4_otp_accessid():
+    return "oka_otp_input_view_separate_3"
+
+def get_nb5_otp_accessid():
+    return "oka_otp_input_view_separate_4"
+
+def get_nb6_otp_accessid():
+    return "oka_otp_input_view_separate_5"
