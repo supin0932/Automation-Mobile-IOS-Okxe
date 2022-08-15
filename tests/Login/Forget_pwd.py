@@ -30,14 +30,28 @@ class LoginTest2(unittest.TestCase):
         self.driver.terminate_app('com.okxe')
 
     def test_forget_pwd_id_with_numberphone_registed_OTPcorrect(self):
-        '''Forget password/ID : With phone number registered  : OTP correct'''
+        """
+        Step 1 : Open app OKXE
+        Step 2 : Click button login
+        Step 3 : Click button forget password
+        Step 4 : Enter numberphone
+        Step 5 : Enter opt to sms
+        Step 6 : Get username
+        Step 7 : Get password
+        Step 8 : Enter username and password at login
+        Step 9 : Verify account
+        *************************
+        Data : + Numberphone : Correct
+               + OTP : Correct
+        Expected Result : Regiter successfull
+        """
         pwd = "@Aa246357"
         action = TouchAction(self.driver)
         self.driver.terminate_app('com.okxe')
         self.loginobj.click_logo_okxe()
         self.loginobj.click_button_login()
         self.forgetpwdobj.click_button_forget_pwd()
-        self.forgetpwdobj.enter_numberphone(numberphone= "0932241574")
+        self.forgetpwdobj.enter_numberphone(numberphone= "0932949905")
         action.tap(x=186, y=152).perform()
         self.forgetpwdobj.click_button_continue()
         self.forgetpwdobj.click_button_autofill_otp()
@@ -48,6 +62,7 @@ class LoginTest2(unittest.TestCase):
         self.forgetpwdobj.click_button_update_pwd()
         self.forgetpwdobj.click_button_comback_login()
         self.loginobj.enter_pwd(pwd=pwd)
+        self.loginobj.click_button_enter_login()
         self.loginobj.click_logo_account()
         text1 = self.loginobj.get_text_username_account()
         self.logoutobj.click_icon_setting()
@@ -60,18 +75,27 @@ class LoginTest2(unittest.TestCase):
             assert False
 
     def test_forget_pwd_id_with_numberphone_registed_OTPuncorrect(self):
-        '''Forget password/ID : With phone number registered  : OTP correct'''
-        pwd = "@Aa246357"
+        """
+        Step 1 : Open app OKXE
+        Step 2 : Click button login
+        Step 3 : Click button forget password
+        Step 4 : Enter numberphone
+        Step 5 : Enter opt any
+        Step 6 : Verify page
+        *************************
+        Data : + Numberphone : Correct
+               + OTP : UnCorrect
+        Expected Result : Regiter unsuccessfull
+        """
         action = TouchAction(self.driver)
         self.driver.terminate_app('com.okxe')
         self.loginobj.click_logo_okxe()
         self.loginobj.click_button_login()
         self.forgetpwdobj.click_button_forget_pwd()
-        self.forgetpwdobj.enter_numberphone(numberphone="0932241574")
+        self.forgetpwdobj.enter_numberphone(numberphone="0932949905")
         action.tap(x=186, y=152).perform()
         self.forgetpwdobj.click_button_continue()
         self.forgetpwdobj.enter_otp(n1=1, n2=2, n3=3, n4=4, n5=5, n6=6)
-        time.sleep(10)
         text = self.loginobj.get_text_warning()
         if text == "Mã xác thực không đúng, vui lòng thử lại.":
             assert True
@@ -79,8 +103,16 @@ class LoginTest2(unittest.TestCase):
             assert False
 
     def test_forget_pwd_id_with_numberphone_not_registed(self):
-        '''Forget password/ID : With phone number registered  : OTP correct'''
-        pwd = "@Aa246357"
+        """
+        Step 1 : Open app OKXE
+        Step 2 : Click button login
+        Step 3 : Click button forget password
+        Step 4 : Enter numberphone
+        Step 5 : Verify page
+        *************************
+        Data : + Numberphone : Not registed
+        Expected Result : Regiter unsuccessfull
+        """
         action = TouchAction(self.driver)
         self.driver.terminate_app('com.okxe')
         self.loginobj.click_logo_okxe()

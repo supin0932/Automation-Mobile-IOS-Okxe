@@ -1,5 +1,3 @@
-from appium import webdriver
-import time
 import pytest
 import unittest
 from utils.driversManages import *
@@ -37,10 +35,20 @@ class LoginTest2(unittest.TestCase):
 
     def test_login_with_fb_with_account_logined(self):
         """
-        Account facebook : True
-        Expected : Login successfully
+        Step 1 : Open app Facebook
+        Step 2 : Login account facebook
+        Step 3 : Open app OKXE
+        Step 4 : Click button login
+        Step 5 : Click button link with facebook
+        Step 6 : Select account facebook
+        Step 7 : Get info account
+        Step 8 : Logout account okxe
+        Step 9 : Logout account facebook
+        Step 10 : Verify info account
+        *************************
+        Data : + Account facebook : Correct
+        Expected Result : Login successfull
         """
-
 
         self.loginfbobj.login_account_fb(username="m.nhutle@okxe.vn", pwd="@Aa246357")
         self.loginobj.click_logo_okxe()
@@ -91,10 +99,19 @@ class LoginTest2(unittest.TestCase):
 
     def test_login_with_fb_with_account_unlogined(self):
         """
-        Account facebook : True
-        Expected : Login successfully
+        Step 1 : Open app OKXE
+        Step 2 : Click button login
+        Step 3 : Click button link with facebook
+        Step 4 : Login account facebook
+        Step 5 : Get info account
+        Step 7 : Logout account okxe
+        Step 8 : Open web Facebook
+        Step 9 : Logout account facebook
+        Step 10 : Verify info account
+        *************************
+        Data : + Account facebook : Correct
+        Expected Result : Login successfull
         """
-
         self.loginobj.click_logo_okxe()
         # try:
         #     self.loginobj.click_button_next_banner()
@@ -126,8 +143,18 @@ class LoginTest2(unittest.TestCase):
 
     def test_login_with_gmail_with_account_unlogined(self):
         """
-        Account gmail : True
-        Expected : Login successfully
+        Step 1 : Open app OKXE
+        Step 2 : Click button login
+        Step 3 : Click button link with gmail
+        Step 4 : Login account gmail
+        Step 5 : Get info account
+        Step 7 : Logout account okxe
+        Step 8 : Open app Gmail
+        Step 9 : Logout account gmail
+        Step 10 : Verify info account
+        *************************
+        Data : + Account gmail : Correct
+        Expected Result : Login successfull
         """
         self.loginobj.click_logo_okxe()
         # try:
@@ -159,8 +186,19 @@ class LoginTest2(unittest.TestCase):
 
     def test_login_with_gmail_with_account_logined(self):
         """
-        Account facebook : True
-        Expected : Login successfully
+        Step 1 : Open web Gmail
+        Step 2 : Login account gmail
+        Step 3 : Open app OKXE
+        Step 4 : Click button login
+        Step 5 : Click button link with gmail
+        Step 6 : Select account gmail
+        Step 7 : Get info account
+        Step 8 : Logout account okxe
+        Step 9 : Logout account gmail
+        Step 10 : Verify info account
+        *************************
+        Data : + Account gmail : Correct
+        Expected Result : Login successfull
         """
         self.logingmobj.login_account_gm(username="lenhut20121995@gmail.com", pwd="11762115")
         self.loginobj.click_logo_okxe()

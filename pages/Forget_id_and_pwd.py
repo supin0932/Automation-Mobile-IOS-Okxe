@@ -20,17 +20,17 @@ class ForgetPassword:
 
     def enter_otp(self, n1, n2, n3, n4, n5, n6):
         print("Enter opt")
-        enter_n1 = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, get_nb1_otp_accessid())))
+        enter_n1 = WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, get_nb1_otp_accessid())))
         enter_n1.send_keys(n1)
-        enter_n2 = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, get_nb2_otp_accessid())))
+        enter_n2 = WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, get_nb2_otp_accessid())))
         enter_n2.send_keys(n2)
-        enter_n3 = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, get_nb3_otp_accessid())))
+        enter_n3 = WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, get_nb3_otp_accessid())))
         enter_n3.send_keys(n3)
-        enter_n4 = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, get_nb4_otp_accessid())))
+        enter_n4 = WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, get_nb4_otp_accessid())))
         enter_n4.send_keys(n4)
-        enter_n5 = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, get_nb5_otp_accessid())))
+        enter_n5 = WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, get_nb5_otp_accessid())))
         enter_n5.send_keys(n5)
-        enter_n6 = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, get_nb6_otp_accessid())))
+        enter_n6 = WebDriverWait(self.driver, 15).until(EC.element_to_be_clickable((MobileBy.ACCESSIBILITY_ID, get_nb6_otp_accessid())))
         enter_n6.send_keys(n6)
 
     def click_button_continue(self):

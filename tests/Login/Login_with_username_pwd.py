@@ -37,8 +37,8 @@ class LoginTest1(unittest.TestCase):
         Step 4 : Logout account
         Step 5 : Compare with expected result
         ***********************
-        Username : True
-        Password : True
+        Data : + Username : True
+               + Password : True
         Expected : Login successfully
         """
         self.driver.terminate_app('com.okxe')
@@ -90,8 +90,8 @@ class LoginTest1(unittest.TestCase):
         Step 3 : Get text warning
         Step 4 : Compare with expected result
         ***********************
-        Username : False
-        Password : False
+        Data : + Username : False
+               + Password : False
         Expected : Login unsuccessfully
         """
         self.driver.terminate_app('com.okxe')
@@ -138,8 +138,8 @@ class LoginTest1(unittest.TestCase):
         Step 3 : Get text warning
         Step 4 : Compare with expected result
         ***********************
-        Username : True
-        Password : False
+        Data : + Username : True
+               + Password : False
         Expected : Login unsuccessfully
         """
         self.driver.terminate_app('com.okxe')
@@ -186,8 +186,8 @@ class LoginTest1(unittest.TestCase):
         Step 3 : Get text warning
         Step 4 : Compare with expected result
         ***********************
-        Username : False
-        Password : True
+        Data : + Username : False
+               + Password : True
         Expected : Login unsuccessfully
         """
         self.driver.terminate_app('com.okxe')
@@ -234,8 +234,8 @@ class LoginTest1(unittest.TestCase):
         Step 3 : Get text warning
         Step 4 : Compare with expected result
         ***********************
-        Username : Empty
-        Password : Empty
+        Data : + Username : Empty
+               + Password : Empty
         Expected : Login unsuccessfully
         """
         self.driver.terminate_app('com.okxe')
@@ -283,8 +283,8 @@ class LoginTest1(unittest.TestCase):
         Step 3 : Get text warning
         Step 4 : Compare with expected result
         ***********************
-        Username : Empty
-        Password : True
+        Data : + Username : Empty
+               + Password : True
         Expected : Login unsuccessfully
         """
         self.driver.terminate_app('com.okxe')
@@ -332,8 +332,8 @@ class LoginTest1(unittest.TestCase):
         Step 3 : Get text warning
         Step 4 : Compare with expected result
         ***********************
-        Username : True
-        Password : Empty
+        Data : + Username : True
+               + Password : Empty
         Expected : Login unsuccessfully
         """
         self.driver.terminate_app('com.okxe')
@@ -380,8 +380,8 @@ class LoginTest1(unittest.TestCase):
         Step 3 : Get text warning
         Step 4 : Compare with expected result
         ***********************
-        Username : False
-        Password : Empty
+        Data : + Username : False
+               + Password : Empty
         Expected : Login unsuccessfully
         """
         self.driver.terminate_app('com.okxe')
@@ -428,8 +428,8 @@ class LoginTest1(unittest.TestCase):
         Step 3 : Get text warning
         Step 4 : Compare with expected result
         ***********************
-        Username : Empty
-        Password : False
+        Data : + Username : Empty
+               + Password : False
         Expected : Login unsuccessfully
         """
         self.driver.terminate_app('com.okxe')
